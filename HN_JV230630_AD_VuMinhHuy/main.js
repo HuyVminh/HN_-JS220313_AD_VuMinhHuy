@@ -1,4 +1,3 @@
-// Danh sách học viên được lưu trong một mảng với tên students
 
 let students = [
     {
@@ -19,12 +18,10 @@ let students = [
     },
 ];
 
-// hiện mảng students lên trên bảng trong HTML
-
 let newId;
 let index;
 
-function showList(data=students) {
+function showList(data = students) {
     let string = "";
     for (let i = 0; i < data.length; i++) {
         const e = data[i];
@@ -45,7 +42,6 @@ function showList(data=students) {
 }
 showList();
 
-// hàm thêm ID mới
 function getNewId() {
     if (students.length == 0) {
         return newId = 1;
@@ -59,7 +55,6 @@ let inputPhone = document.getElementById("phone");
 let inputAdress = document.getElementById("hometown");
 let inputGender = document.getElementsByName("gender");
 
-// hàm lấy value của input radio
 function checkRadio() {
     let checkValue = "";
     for (let i = 0; i < inputGender.length; i++) {
@@ -115,8 +110,6 @@ function findIndexById(iD) {
     return -1;
 }
 
-// xóa 1 sinh viên
-
 function del(index) {
     students.splice(index, 1);
     showList();
@@ -132,16 +125,12 @@ function fix(id) {
     return index;
 }
 
-// tìm kiếm sinh viên theo tên
-
 function findStudent() {
     let text = document.getElementById("search").value;
     let textX = text.trim().toLowerCase();
     let foundStudent = students.filter(stu => stu.name.toLowerCase().includes(textX));
     showList(foundStudent);
 }
-
-// sắp xếp thứ tự theo alpha b
 
 function sortStudent() {
     students.sort((a, b) => a.name.localeCompare(b.name));
